@@ -1,0 +1,24 @@
+package com.driver.Service;
+
+import com.driver.Order;
+
+import java.util.HashMap;
+import java.util.List;
+
+public interface OrderPartnerPair {
+
+    void addOrderPartnerPair(String orderId, String partnerId);
+
+    Integer getOrderCountByPartnerId(String partnerId);
+
+    List<String> getOrdersByPartnerId(String partnerId);
+
+    Integer getCountOfUnassignedOrders();
+
+    Integer getOrdersLeftAfterGivenTimeByPartnerId(String time, String partnerId);
+
+    String getLastDeliveryTimeByPartnerId(String partnerId);
+
+
+
+}

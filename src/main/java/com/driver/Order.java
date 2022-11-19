@@ -1,5 +1,10 @@
 package com.driver;
 
+
+import lombok.*;
+import org.springframework.stereotype.Service;
+
+
 public class Order {
 
     private String id;
@@ -7,8 +12,11 @@ public class Order {
 
     public Order(String id, String deliveryTime) {
 
+        this.id = id;
+        int HH = Integer.valueOf(deliveryTime.substring(0, 2));
+        int MM = Integer.valueOf(deliveryTime.substring(3));
         // The deliveryTime has to converted from string to int and then stored in the attribute
-        //deliveryTime  = HH*60 + MM
+        this.deliveryTime  = HH*60 + MM;
     }
 
     public String getId() {
